@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { GuessTheNumberComponent } from './guess-the-number/guess-the-number.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, GuessTheNumberComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })

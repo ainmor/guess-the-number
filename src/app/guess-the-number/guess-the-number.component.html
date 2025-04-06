@@ -1,0 +1,33 @@
+<div class="guess-the-number-container">
+  <h1>Guess the Number</h1>
+  <p>
+    Try to guess the secret number between {{ MIN_NUMBER }} and
+    {{ MAX_NUMBER }}.
+  </p>
+
+  <!-- Feedback Message -->
+  <p class="feedback-message" *ngIf="feedbackMessage">{{ feedbackMessage }}</p>
+
+  <!-- Input for Guess -->
+  <div *ngIf="!gameOver">
+    <label for="guess">Enter your guess:</label>
+    <input
+      type="number"
+      id="guess"
+      [(ngModel)]="guessTheNumber"
+      [min]="MIN_NUMBER"
+      [max]="MAX_NUMBER"
+      placeholder="Enter a number"
+    />
+    <button (click)="submitGuess()">Submit Guess</button>
+  </div>
+
+  <!-- Attempts Left -->
+  <p *ngIf="!gameOver">{{ attemptsLeftMessage }}</p>
+
+  <!-- Game Over Message -->
+  <div *ngIf="gameOver">
+    <p>Game Over!</p>
+    <button (click)="resetGame()">Play Again</button>
+  </div>
+</div>
